@@ -1,34 +1,61 @@
-# Sistemas-Operacionais, Tarefa 1: Processos e memória compartilhada
+# Sistemas-Operacionais, Tarefa 3: Processos e memória compartilhada
 
-LAB1 = https://replit.com/@ricleta/lab1-1#LAB1/
+LAB3 = [https://replit.com/@ricleta/lab1-1#LAB1/](https://replit.com/@ricleta/Tarefa3-Sistemas-Operacionais#README.md)
 
 ### Enunciado
-__Objetivo__: Avaliar como se comporta o tempo de execução de um algoritmo com e sem
-concorrência entre os algoritmos (sequencial x paralelo).
+__Objetivo__: Programar em linguagem C programas (ou rotinas) que implementem um
+interpretador de comandos e escalonador de programas. 
 
-1. Inicialmente faça um programa sequencial para calcular a soma de dois vetores (vetA e vetB)
-de 1.000 posições (testar também com vetores de 10.000 posições), armazenando o resultado
-em um terceiro vetor (vetC), tomando o tempo de execução do algoritmo de soma.
+- O interpretador deverá solicitar ao escalonador a execução de programas (cada um a seu tempo).
+- O escalonador por sua vez dispara a execução dos programas (um a um) de acordo com uma determinada política de escalonamento, que será:
+  - LISTA DE PRIORIDADES (neste caso o interpretador deve indicar ao escalonador uma
+prioridade de execução que é um número de 1 a 7 sendo 1 a maior prioridade e 7 a
+menor).
+    > No caso da execução de tarefas com a mesma prioridade estas devem ser escalonadas
+com tempo compartilhado a cada 3UT (ROUND ROBIN).
+    - O escalonador deve ter estruturas de dados capazes de possibilitar a execução desta política.
+- A comunicação entre os processos é feita da seguinte forma:
+    > Interpretador de comandos -> Escalonador -> Sistema Operacional
 
-2. Em seguida paralelize o algoritmo de soma utilizando 8 processos. Crie uma memória
-compartilhada entre os processos (irmãos) para armazenar os vetores. 
+### Importante
+- O Sistema Operacional tem um escalonador próprio mas o escalonador da tarefa é quem vai coordenar a execução dos processos indicados pelo usuário via interpretador de comandos. 
+  - Ou seja, o escalonador é quem vai indicar a ordem de disparo para a execução dos programas e vai influir na sua execução.
+  - É o escalonador que vai realizar a preempção, via comunicação entre processos (vai indicar a interrupção da execução de um processo – sinal SIGSTOP - e a continuidade da sua execução – sinal SIGCONT).
+    - Um processo com maior prioridade executa até que termine ou até que um outro, de maior prioridade, entre na fila de prontos.
+    - Se os processos mais prioritários tiverem a mesma prioridade, então eles serão executados com tempo compartilhado (ROUND ROBIN) entre eles, com fatia de tempo = 3UT ́s (unidades de tempo).
+    - Quando um processo terminar o seu tempo total de execução ele deve ser terminado pelo escalonador.
+    > Considere que 1 UT tem a duração de 1 segundo.
 
-3. Compare o tempo de execução dos algoritmos sequencial e paralelo. 
-    > __OBS__: Para tomar o tempo de execução dos algoritmos é recomendável que seja utilizada a função gettimeofday().
+### Testes
+A linguagem a ser analisada pelo interpretador de comandos é a seguinte:
+- exec <nome_programa>, prioridade=<numero inteiro, de 1 a 7>
+- inicio_tempo_execucao=<numero inteiro>, tempo_total_ execução=<numero inteiro em UT ́s>
+  
+Os programas a serem executados devem ser programas com loop eterno elaborados por você.
+> A entrada padrão e a saída padrão devem ser redirecionadas para os arquivos entrada.txt e
+saída.txt respectivamente.
 
-4. Elabore um relatório contendo o código fonte do programa, apresentando os resultados
-obtidos e a discussão dos resultados. Indique ainda o que está e o que não está funcionando
-no seu programa.
-
-> #### Importante
-> - O vetor vetA deve ser inicializado com o valor = 1 em todos os elementos e vetB com valor = 2. 
-> - Cada processo vai executar a soma em 125 (ou 1.250) posições dos vetores, de forma a não usarem a mesma
-posição de memória. Tome o tempo decorrido na execução do algoritmo de soma.
-
-
+Exemplo de entrada.txt:
+```
+exec p1, prioridade=3, inicio_tempo_execucao=0, tempo_total_ execucao =8
+exec p2, prioridade=2, inicio_tempo_execucao=2, tempo_total_ execucao =9
+exec p3, prioridade=1, inicio_tempo_execucao=3, tempo_total_ execucao =11
+exec p4, prioridade=2, inicio_tempo_execucao=4, tempo_total_ execucao =13
+exec p5, prioridade=1, inicio_tempo_execucao=5, tempo_total_ execucao =14
+```
+Exemplo de saída.txt (linha do tempo):
+```
+Tempo 0: P1 executando – fila de prontos vazia
+Tempo 1: P1 executando – fila de prontos vazia
+Tempo 2: P2 executando – fila de prontos: P1
+Tempo 3: P3 executando – fila de prontos: P2, P1
+Etc...
+```
 ### Entrega
-A tarefa pode ser feita em dupla. Você deve fazer upload do relatório (.pdf) e do código fonte
-(.c) no site do EAD. Indique claramente no relatório e no código fonte os nomes e matrículas
-dos alunos que compõem o grupo.
+O código do lab deve ser acompanhado de um relatório contendo o resultado da execução (os
+arquivos de entrada e de saída), seus comentários sobre o que ocorreu na execução dos
+processos e como pode ser validado através dos resultados, além de indicar o que funciona e o
+que não funciona no seu programa.
+O trabalho pode ser feito de forma individual ou em dupla.
 
-Link para entregar: https://ead.puc-rio.br/mod/assign/view.php?id=798506
+Link para entregar: [https://ead.puc-rio.br/mod/assign/view.php?id=798506](https://ead.puc-rio.br/course/view.php?id=71879)
