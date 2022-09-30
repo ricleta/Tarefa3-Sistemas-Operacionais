@@ -50,7 +50,7 @@ CircularList * addNode(CircularList * cl, int pid){
     return cl;
 }
 
-int getID(Node * n){
+int getNodeID(Node * n){
     return n->pid;
 }
 
@@ -63,7 +63,7 @@ int nextNode(CircularList * cl){
         else
             cl->current = next;
 
-        return getID(cl->current);
+        return getNodeID(cl->current);
     }
     return -1;
 }
@@ -76,7 +76,11 @@ void freeNode(Node * n){
 }
 
 //TODO export
-void freeCircularList(CircularList * cl){
+void freeCircular(CircularList * cl){
     freeNode(cl->head);
     free(cl);
+}
+
+int isCircularEmpty(CircularList * cl){
+    return cl->head!=NULL;
 }

@@ -7,56 +7,31 @@ typedef struct __PriorList{
     CircularList * priorList[SIZE_PRIOR]; 
 }PriorList;
 
-Node * newNode(int a,Node * prev,Node * next){
-    Node * node = malloc(sizeof(Node));
-    if(next==NULL){
-        node->prev = node;
-        node->next = node;
-    }else{
-        node->prev = prev;
-        node->next = next;
-    }
-    node->id = a;
-    return node;
-}
 
-
-
-PriorList * newList(){
-    PriorList * list = malloc(sizeof(List));
+PriorList * newPriorList(){
+    PriorList * list = malloc(sizeof(PriorList));
     return list;
 }
-/*
 
 
-List * addNode(List * l,int priority,int n){
-    if(isPriorityEmpty){
-        l->priorList[priority] = newNodeStart(n);
-    }else{
-        l->priorList[priority] = newNode(n);
-    }
-    return l;
+int isPriorEmpty(PriorList * l,int priority){
+    return isCircularEmpty(l->priorList[priority]);
 }
 
-*/
-
-int isPriorityEmpty(List * l,int priority){
-    return l->priorList[priority]!=NULL;
-}
-
-
-void freeNode(Node * n){
-
-}
-
-
-
-void freeList(List * l){
+void freePrior(PriorList * l){
     for(int i = 0; i < SIZE_PRIOR ; i++ ){
-        if(!isPriorityEmpty(l,i)){
-            freeNode(l->priorList[i]);
+        if(!isPriorEmpty(l,i)){
+            freeCircular(l->priorList[i]);
         }
     }
 }
 
+int getNext(PriorList * l,int priority){
+    return nextNode(l->priorList[priority]);
+}
+
+PriorList * addId(PriorList * l, int priority, int id){
+    addNode(l->priorList[priority],id);
+    return l;
+}
 
