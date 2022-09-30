@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct __Node{
     int pid;
@@ -12,13 +13,6 @@ typedef struct __CircularList{
     Node * current;
 }CircularList;
 
-/*
-int throw(const char * str){
-    printf("Error %s\n",str);
-    exit(-1);
-    return 0;
-}
-*/
 
 Node * newNode(int pid){
     Node * n = malloc(sizeof(Node));
@@ -56,13 +50,16 @@ int getNodeID(Node * n){
 
 //TODO export
 int nextNode(CircularList * cl){
+    if(cl->current==NULL){
+        cl->current=cl->head;
+        return getNodeID(cl->current);
+    }
     Node * next = cl->current->next;
     if(cl->head!=NULL){
         if(next==NULL)
             cl->current = cl->head;    
         else
             cl->current = next;
-
         return getNodeID(cl->current);
     }
     return -1;
@@ -81,6 +78,17 @@ void freeCircular(CircularList * cl){
     free(cl);
 }
 
+//TODO export
 int isCircularEmpty(CircularList * cl){
     return cl->head!=NULL;
+}
+//TODO export
+void printCircular(CircularList * cl){
+    if(cl->head==NULL){
+        printf("\n");
+        return;
+    }
+    for(Node * n = cl->head ; n!=NULL ;n = n->next)
+        printf("%d ",n->pid);
+    printf("\n");
 }
