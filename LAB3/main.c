@@ -19,6 +19,7 @@ Node * newNode(int pid){
     Node * n = malloc(sizeof(Node));
     n->pid = pid;
     n->next = NULL;
+    return n;
 }
 
 
@@ -120,6 +121,7 @@ void freePrior(PriorList * l){
             free(l->priorList[i]);
         }
     }
+    free(l);
 }
 //TODO export
 int getNext(PriorList * l,int priority){
@@ -156,7 +158,7 @@ int main(void){
     printPrior(pl);
 
     for(int i = 0 ;i<10;i++){
-        printf("%d\n",getNext(pl,1));
+        printf("%d ",getNext(pl,1));
     }
     printf("\n");
     
