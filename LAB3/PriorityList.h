@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "CirularList.h"
+#include "cirularList.h"
 #define SIZE_PRIOR 7
 
 //TODO export
@@ -40,7 +40,7 @@ PriorList * addId(PriorList * l, int priority, int id){
 }
 //TODO export
 void printPrior(PriorList * pl){
-    for(int i = 0; i<SIZE_PRIOR ;i++){
+    for(int i = 0; i< 2 ;i++){
         printf("%d- ",i);
         printCircular(pl->priorList[i]);
     }

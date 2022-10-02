@@ -140,6 +140,7 @@ void printPrior(PriorList * pl){
 
 int main(void){
     PriorList * pl = newPriorList();
+    
     addId(pl,1,10);
     addId(pl,1,11);
     addId(pl,1,12);
@@ -151,11 +152,14 @@ int main(void){
     addId(pl,6,18);
     addId(pl,6,19);
     addId(pl,6,20);
+    
     printPrior(pl);
+
     for(int i = 0 ;i<10;i++){
-        printf("%d ",getNext(pl,1));
+        printf("%d\n",getNext(pl,1));
     }
     printf("\n");
+    
     freePrior(pl);
     return 0;
 }
