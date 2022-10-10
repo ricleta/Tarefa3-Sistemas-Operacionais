@@ -202,7 +202,7 @@ Node* insere_exec()
 	{
 		aux = lista_pronto;			
 		lista_pronto = lista_pronto->prox;	
-        // free(aux);
+        free(aux);
         return novo;				
 	}
 	
@@ -216,7 +216,7 @@ Node* insere_exec()
 		
     novo->prox = atual;	
 		
-        if(anterior == NULL)	
+    if(anterior == NULL)	
 		{
 			lista_exec = novo;	
 		}
@@ -228,7 +228,7 @@ Node* insere_exec()
 		aux = lista_pronto;			
 		lista_pronto = lista_pronto->prox;	
 		
-        // free(aux);				
+    free(aux);				
 	}
 	
   if(atual != NULL && novo->prioridade < atual->prioridade)	
@@ -236,13 +236,13 @@ Node* insere_exec()
 		aux = lista_pronto;			
 		lista_pronto = lista_pronto->prox;	
 		
-    // free(aux);				
+    free(aux);				
     while(atual != NULL)	
 		{
 			lista_pronto = insere_pronto(atual);	
 			aux = atual;		
 			atual = atual->prox;	
-			// free(aux);		
+			free(aux);		
 		}
 		
     lista_exec = novo;	

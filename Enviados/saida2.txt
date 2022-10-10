@@ -1,0 +1,90 @@
+Tempo 0:	 p1 está pronto
+Tempo 1:	 p7 está pronto
+Tempo 1: 	executando p1 -- fila de prontos vazia
+Tempo 2:	 p2 está pronto
+Tempo 2:	 p1 está pronto
+Tempo 2: 	executando p1 -- fila de prontos: p7  
+Tempo 3:	 p3 está pronto
+Tempo 3: 	executando p2 -- fila de prontos: p1 ,p7  
+Tempo 4: 	executando p2 -- fila de prontos: p3 ,p1 ,p7  
+Tempo 5: 	executando p2 -- fila de prontos: p3 ,p1 ,p7  
+Tempo 6:	 p6 está pronto
+fila de prontos: p3 ,p1 ,p6 ,p7  
+Tempo 6: 	executando p2 -- fila de prontos: p3 ,p1 ,p7  
+Tempo 7:	 p9 está pronto
+Tempo 7: 	executando p2 -- fila de prontos: p3 ,p1 ,p6 ,p7  
+Tempo 8: 	executando p2 -- fila de prontos: p9 ,p3 ,p1 ,p6 ,p7  
+Tempo 8:	p2 acabou -- fila de prontos: p9 ,p3 ,p1 ,p6 ,p7  
+Tempo 9: 	executando p9 -- fila de prontos: p1 ,p6 ,p7  
+Tempo 10:	 p4 está pronto
+fila de prontos: p1 ,p4 ,p6 ,p7  
+Tempo 10: 	executando p9 -- fila de prontos: p1 ,p6 ,p7  
+Tempo 11: 	executando p9 -- fila de prontos: p1 ,p4 ,p6 ,p7  
+Tempo 12: 	executando p3 -- fila de prontos: p1 ,p4 ,p6 ,p7  
+Tempo 13:	 p5 está pronto
+fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 13: 	executando p3 -- fila de prontos: p1 ,p4 ,p6 ,p7  
+Tempo 14: 	executando p3 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 15: 	executando p9 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 16: 	executando p9 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 17: 	executando p9 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 18: 	executando p3 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 19: 	executando p3 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 20:	 p8 está pronto
+Tempo 20:	 p9 está pronto
+Tempo 20:	 p3 está pronto
+Tempo 20: 	executando p3 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 21: 	executando p8 -- fila de prontos: p3 ,p9 ,p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 22: 	executando p8 -- fila de prontos: p3 ,p9 ,p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 23: 	executando p8 -- fila de prontos: p3 ,p9 ,p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 24: 	executando p8 -- fila de prontos: p3 ,p9 ,p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 24:	p8 acabou -- fila de prontos: p3 ,p9 ,p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 25: 	executando p9 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 26: 	executando p9 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 26:	p9 acabou -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 27: 	executando p3 -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 27:	p3 acabou -- fila de prontos: p1 ,p4 ,p5 ,p6 ,p7  
+Tempo 28: 	executando p1 -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 29: 	executando p1 -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 30: 	executando p1 -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 31: 	executando p1 -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 32: 	executando p1 -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 33: 	executando p1 -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 33:	p1 acabou -- fila de prontos: p4 ,p5 ,p6 ,p7  
+Tempo 34: 	executando p4 -- fila de prontos: p5 ,p6 ,p7  
+Tempo 35: 	executando p4 -- fila de prontos: p5 ,p6 ,p7  
+Tempo 36: 	executando p4 -- fila de prontos: p5 ,p6 ,p7  
+Tempo 37: 	executando p4 -- fila de prontos: p5 ,p6 ,p7  
+Tempo 37:	p4 acabou -- fila de prontos: p5 ,p6 ,p7  
+Tempo 38: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 39: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 40: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 41: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 42: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 43: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 44: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 45: 	executando p5 -- fila de prontos: p6 ,p7  
+Tempo 45:	p5 acabou -- fila de prontos: p6 ,p7  
+Tempo 46: 	executando p6 -- fila de prontos vazia
+Tempo 47: 	executando p6 -- fila de prontos vazia
+Tempo 48: 	executando p6 -- fila de prontos vazia
+Tempo 49: 	executando p7 -- fila de prontos vazia
+Tempo 50: 	executando p7 -- fila de prontos vazia
+Tempo 51: 	executando p7 -- fila de prontos vazia
+Tempo 52: 	executando p6 -- fila de prontos vazia
+Tempo 53: 	executando p6 -- fila de prontos vazia
+Tempo 54: 	executando p6 -- fila de prontos vazia
+Tempo 54:	p6 acabou -- fila de prontos vazia
+Tempo 55: 	executando p7 -- fila de prontos vazia
+Tempo 56: 	executando p7 -- fila de prontos vazia
+Tempo 57: 	executando p7 -- fila de prontos vazia
+Tempo 58: 	executando p7 -- fila de prontos vazia
+Tempo 58:	p7 acabou -- fila de prontos vazia
+Tempo 100:	 p10 está pronto
+Tempo 101: 	executando p10 -- fila de prontos vazia
+Tempo 102: 	executando p10 -- fila de prontos vazia
+Tempo 103: 	executando p10 -- fila de prontos vazia
+Tempo 104: 	executando p10 -- fila de prontos vazia
+Tempo 105: 	executando p10 -- fila de prontos vazia
+Tempo 106: 	executando p10 -- fila de prontos vazia
+Tempo 106:	p10 acabou -- fila de prontos vazia
